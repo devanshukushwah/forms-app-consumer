@@ -21,7 +21,7 @@ public class FormSubmitServiceImpl implements FormSubmitService {
             formSubmit.getAnswers().forEach((answer) -> answer.setFormSubmit(formSubmit));
         }
         FormSubmit save = formSubmitRepository.save(formSubmit);
-        return save.getSubId() > 0;
+        return save.getSubId() != null;
     }
 
 }

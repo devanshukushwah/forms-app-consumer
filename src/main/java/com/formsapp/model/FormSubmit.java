@@ -9,6 +9,7 @@ import lombok.NoArgsConstructor;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import java.util.UUID;
 
 /**
  * Entity representing a submission of a form.
@@ -28,7 +29,7 @@ public class FormSubmit {
      */
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long subId;
+    private UUID subId;
 
     /**
      * The ID of the form that is being submitted.
@@ -61,7 +62,6 @@ public class FormSubmit {
      * This is a one-to-many relationship with the FormFieldAnswer entity.
      */
     @OneToMany(mappedBy = "formSubmit", cascade = CascadeType.ALL, orphanRemoval = true)
-    @JsonManagedReference
     private List<FormFieldAnswer> answers = new ArrayList<>();
 
 
