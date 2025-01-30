@@ -21,6 +21,11 @@ FormsApp is a web-based application that allows users to create, submit, and tra
 - **Testing**: JUnit, Mockito
 - **Logging**: Log4J2
 
+## Changelogs
+
+### 1.0.0
+- updated to `JDK 21` and `Springboot 3.4.2`
+
 ## Installation
 
 1. **Clone the repository**
