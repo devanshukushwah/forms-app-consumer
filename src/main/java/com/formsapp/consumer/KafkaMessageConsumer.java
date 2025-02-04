@@ -2,7 +2,7 @@ package com.formsapp.consumer;
 
 import com.formsapp.common.AppConstant;
 import com.formsapp.exception.Operation;
-import com.formsapp.model.FormSubmit;
+import com.formsapp.entity.FormSubmit;
 import com.formsapp.service.FormSubmitService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;

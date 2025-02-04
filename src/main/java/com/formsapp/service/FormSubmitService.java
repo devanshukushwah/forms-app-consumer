@@ -1,6 +1,6 @@
 package com.formsapp.service;
 
-import com.formsapp.model.FormSubmit;
+import com.formsapp.entity.FormSubmit;
 
 /**
  * Service interface for managing form submissions.

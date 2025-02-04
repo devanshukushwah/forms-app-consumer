@@ -1,6 +1,5 @@
-package com.formsapp.model;
+package com.formsapp.entity;
 
-import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;

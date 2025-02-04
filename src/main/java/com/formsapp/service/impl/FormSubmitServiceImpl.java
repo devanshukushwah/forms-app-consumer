@@ -1,6 +1,6 @@
 package com.formsapp.service.impl;
 
-import com.formsapp.model.FormSubmit;
+import com.formsapp.entity.FormSubmit;
 import com.formsapp.repository.FormSubmitRepository;
 import com.formsapp.service.FormSubmitService;
 import org.springframework.beans.factory.annotation.Autowired;
