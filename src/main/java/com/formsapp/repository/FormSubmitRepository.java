@@ -1,6 +1,6 @@
 package com.formsapp.repository;
 
-import com.formsapp.model.FormSubmit;
+import com.formsapp.entity.FormSubmit;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

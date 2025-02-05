@@ -1,6 +1,8 @@
 package com.formsapp.service.impl;
 
-import com.formsapp.model.FormSubmit;
+import com.formsapp.dto.SubmitDTO;
+import com.formsapp.entity.FormSubmit;
+import com.formsapp.mapper.SubmitMapper;
 import com.formsapp.repository.FormSubmitRepository;
 import com.formsapp.service.FormSubmitService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,7 +18,8 @@ public class FormSubmitServiceImpl implements FormSubmitService {
      * {@inheritDoc}
      */
     @Override
-    public Boolean addSubmit(FormSubmit formSubmit) {
+    public Boolean addSubmit(SubmitDTO submitDto) {
+        FormSubmit formSubmit = SubmitMapper.dtoToEntity(submitDto);
         if (formSubmit.getAnswers() != null) {
             formSubmit.getAnswers().forEach((answer) -> answer.setFormSubmit(formSubmit));
         }
