@@ -2,7 +2,7 @@ package com.formsapp.consumer;
 
 import com.formsapp.common.AppConstant;
 import com.formsapp.exception.Operation;
-import com.formsapp.entity.FormSubmit;
+import com.formsapp.dto.SubmitDTO;
 import com.formsapp.service.FormSubmitService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,14 +17,14 @@ public class KafkaMessageConsumer {
     private FormSubmitService formSubmitService;
 
     @KafkaListener(topics = AppConstant.KAFKA_TOPIC_FORMS_APP, groupId = "${spring.kafka.consumer.group-id}")
-    public void consumer(FormSubmit formSubmit) {
+    public void consumer(SubmitDTO submitDto) {
         try {
-            Boolean res = formSubmitService.addSubmit(formSubmit);
+            Boolean res = formSubmitService.addSubmit(submitDto);
             if (res != null && !res) {
                 throw new Operation("failed to consume form submit");
             }
         } catch (Exception ex) {
-            log.error("Exception during form submit consume, message={}, data={}", ex.getMessage(), formSubmit.toString());
+            log.error("Exception during form submit consume, message={}, data={}", ex.getMessage(), submitDto.toString());
         }
     }
 }
